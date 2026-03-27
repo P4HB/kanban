@@ -15,7 +15,7 @@ const DEFAULT_COLUMNS = [
 ];
 
 async function seed() {
-  const sql = neon(process.env.DATABASE_URL!);
+  const sql = neon(process.env.POSTGRES_URL!);
   const db = drizzle(sql);
 
   console.log("Seeding columns...");
