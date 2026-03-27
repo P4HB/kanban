@@ -30,6 +30,7 @@ export default function Header() {
       {session?.user && (
         <div className="flex items-center gap-3">
           {session.user.image && (
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={session.user.image} alt="" className="w-7 h-7 rounded-full" />
           )}
           <button onClick={() => signOut()} className="p-2 text-gray-500 hover:text-red-500 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
