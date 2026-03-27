@@ -6,7 +6,7 @@ import { format, startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays, isSa
 import { ko } from "date-fns/locale";
 import { api } from "@/lib/api";
 import { useStore } from "@/store/use-store";
-import type { Task, Project } from "@/lib/types";
+import type { Task } from "@/lib/types";
 
 type ViewMode = "month" | "week";
 

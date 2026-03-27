@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { X, Trash2, Plus, CheckSquare, Square } from "lucide-react";
-import type { Task, Label, Column, ChecklistItem } from "@/lib/types";
+import type { Task, Label, Column } from "@/lib/types";
 import { api } from "@/lib/api";
 import { useStore } from "@/store/use-store";
 
@@ -61,7 +61,7 @@ export default function TaskModal({ task, columns, labels, projectId, onClose, o
           priority: (priority || null) as Task["priority"],
           dueDate: dueDate || null,
           labelIds: selectedLabelIds,
-          checklistItems: checklist as any,
+          checklistItems: checklist as Task["checklistItems"],
         });
         useStore.getState().updateTask(task.id, updated);
       }

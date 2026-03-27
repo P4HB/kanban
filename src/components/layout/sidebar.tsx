@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Kanban, Calendar, Plus, Trash2, Archive, FolderOpen } from "lucide-react";
+import { LayoutDashboard, Kanban, Calendar, Plus, Trash2 } from "lucide-react";
 import { useStore } from "@/store/use-store";
 import { api } from "@/lib/api";
 

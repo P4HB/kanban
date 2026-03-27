@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { DndContext, DragEndEvent, DragOverEvent, DragStartEvent, PointerSensor, useSensor, useSensors, closestCorners } from "@dnd-kit/core";
+import { DndContext, DragEndEvent, PointerSensor, useSensor, useSensors, closestCorners } from "@dnd-kit/core";
 import { Plus } from "lucide-react";
 import { useStore } from "@/store/use-store";
 import { api } from "@/lib/api";
-import type { Task, Column, Label } from "@/lib/types";
+import type { Task } from "@/lib/types";
 import KanbanColumn from "./kanban-column";
 import TaskModal from "./task-modal";
 
