@@ -106,9 +106,9 @@ export default function KanbanBoard({ projectId }: Props) {
         </button>
       </div>
 
-      <div className="flex-1 overflow-x-auto px-4 pb-4">
+      <div className="flex-1 px-4 pb-4 overflow-hidden">
         <DndContext sensors={sensors} collisionDetection={closestCorners} onDragEnd={handleDragEnd}>
-          <div className="flex gap-4 h-full">
+          <div className="grid grid-cols-6 gap-3 h-full">
             {columns.map((col) => (
               <KanbanColumn
                 key={col.id}

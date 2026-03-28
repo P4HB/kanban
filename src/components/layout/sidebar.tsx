@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Kanban, Calendar, Plus, Trash2 } from "lucide-react";
+import { LayoutDashboard, Kanban, Calendar, Plus, Trash2, AlertTriangle } from "lucide-react";
 import { useStore } from "@/store/use-store";
 import { api } from "@/lib/api";
 
@@ -64,6 +64,16 @@ export default function Sidebar() {
         >
           <Calendar className="w-4 h-4" />
           캘린더
+        </Link>
+
+        <Link
+          href="/priority"
+          className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
+            pathname === "/priority" ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300" : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+          }`}
+        >
+          <AlertTriangle className="w-4 h-4" />
+          우선순위
         </Link>
 
         <div className="pt-4">
