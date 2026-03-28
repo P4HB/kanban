@@ -115,7 +115,6 @@ export default function KanbanBoard({ projectId }: Props) {
                 column={col}
                 tasks={tasks.filter((t) => t.columnId === col.id).sort((a, b) => a.sortOrder - b.sortOrder)}
                 onTaskClick={setSelectedTask}
-                projectColor={project?.color}
               />
             ))}
           </div>

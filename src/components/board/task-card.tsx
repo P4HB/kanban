@@ -15,10 +15,9 @@ const PRIORITY_COLORS: Record<string, string> = {
 interface Props {
   task: Task;
   onClick: () => void;
-  projectColor?: string;
 }
 
-export default function TaskCard({ task, onClick, projectColor }: Props) {
+export default function TaskCard({ task, onClick }: Props) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: task.id,
     data: { type: "task", task },
@@ -46,14 +45,9 @@ export default function TaskCard({ task, onClick, projectColor }: Props) {
           <GripVertical className="w-4 h-4" />
         </button>
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
-            {task.priority && (
-              <div className={`w-2 h-2 rounded-full ${PRIORITY_COLORS[task.priority]}`} />
-            )}
-            {projectColor && (
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: projectColor }} />
-            )}
-          </div>
+          {task.priority && (
+            <div className={`w-2 h-2 rounded-full mb-1 ${PRIORITY_COLORS[task.priority]}`} />
+          )}
           <p className="text-sm font-medium text-gray-800 dark:text-gray-200 truncate">{task.title}</p>
           <div className="flex items-center gap-3 mt-2">
             {task.labels && task.labels.length > 0 && (
